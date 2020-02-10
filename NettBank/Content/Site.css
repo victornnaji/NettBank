@@ -1,0 +1,41 @@
+﻿
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn{
+    display: inline-block;
+    height: 35px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: inherit;
+    background-color: #37cfb1;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #2a3554;
+    color: #2a3554;
+}
+
+.btn-2 {
+    padding: 10px 15px;
+    height: unset;
+    width: unset;
+    display: inline-block;
+}
+
+.brand {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: 'Odibee Sans', cursive;
+}
+
+.hero-text{
+    height: 500px;
+}
