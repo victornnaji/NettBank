@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    @Html.AntiForgeryToken()
+    <span>
+        User.Identity.GetUserName() <span>!</span>
+    </span>
+}
+else
+{
+    <span>there!</span>
+}

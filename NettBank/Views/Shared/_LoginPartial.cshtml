@@ -18,6 +18,6 @@ else
     <div class="flex justify-between items-center">
         @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
         <div class="btn btn-secondary" role="button">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</div>
-        <div class="btn ml-4" role="button">Find Loan</div>
+        <div class="btn ml-4" role="button">@Html.ActionLink("Find Loans", "Options", "Home")</div>
     </div>
 }

@@ -26,5 +26,10 @@ namespace NettBank.Controllers
 
             return View();
         }
+
+        public ActionResult Options()
+        {
+            return View();
+        }
     }
 }

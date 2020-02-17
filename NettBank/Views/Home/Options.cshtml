@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Options";
+}
+
+<div class="container">
+    <form class="steps mt-8" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="" action="TODO">
+        <ul id="progressbar">
+            <li class="active">User Information</li>
+            <li>Aquisition</li>
+            <li>Cultivation</li>
+            <li>Cultivation2</li>
+            <li>Retention</li>
+        </ul>
+
+        @* FieldSets *@
+    <fieldset>
+        <div class="fieldset-holder">
+            <h2 class="fs-title">Hi @Html.Partial("_Username")let's get started and find you your best loan.</h2>
+            <div class="amoount">
+                <label for="amount">How much do you need? *</label>
+                <div>
+                    <span class="naira">₦</span>
+                    <input id="amount" class="form-control" name="amount" required="required" type="number" value="" placeholder="1000000" data-rule-required="true" data-msg-required="Please include the amount">
+                    <span class="error1" style="display: none;">
+                        <i class="error-log fas fa-times fa-lg"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="typeloan mt-4">
+                <label for="loanType">What will your fund be used for? *</label>
+                <div class="loan-type flex justify-between item-center w-3/5 mx-auto mt-1">
+                    <div>
+                        <input type="radio" name="loanType" id="property" value="property" checked/>
+                        <label for="property" class="small-card">
+                            <span class="radio-image"><img src="~/Content/Images/house.svg" class="radio-icon" /></span>
+                            <span>Property</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="loanType" id="business" value="business" />
+                        <label for="business" class="small-card">
+                            <span class="radio-image"><img src="~/Content/Images/business.svg" class="radio-icon" /></span>
+                            <span>Business</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="purpose mt-4">
+                <label for="amount">What is the purpose? *</label>
+                <select id="purpose">
+                    <option>Select</option>
+                </select>
+            </div>
+        </div>
+        @*<input type="button" data-page="1" name="next" class="next action-button" value="Next" />*@
+    </fieldset>
+    </form>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
