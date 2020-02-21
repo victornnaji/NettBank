@@ -1,4 +1,27 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
+    var property = ["Buying a property", "Paying a property rent", "Refurbishing a property"];
+    var business = ["Starting a business", "Financing a debt", "Fiout or Refurbishment"];
+
+    $('input[name="loanType"]').click(() => {
+        var x = $('input[name="loanType"]:checked').val();
+        let y;
+        $('#purpose').empty().append('<option selected="selected" value="">Select</option>');
+        x === 'property' ? y = property : y = business;
+        if (x) {
+
+          $.each(y, function (i, item) {
+            $('#purpose').append($('<option>', {
+                value: item,
+                text: item
+                    }));
+                });
+           }
+    })
+
+});
+
+$(document).ready(function () {
     var current_fs, next_fs, previous_fs;
     var left, opacity, scale;
     var animating;
@@ -15,8 +38,6 @@
             $(element).next('span').hide();
         }
     });
-
-
     $(".next").click(function () {
         $(".steps").validate({
             errorClass: 'invalid',
@@ -60,10 +81,8 @@
                 current_fs.hide();
                 animating = false;
             },
-            easing: 'easeInOutExpo'
+            //easing: 'easeInOutExpo'
         });
-
-       
     });
     $(".submit").click(function () {
         $(".steps").validate({
@@ -108,7 +127,7 @@
                 current_fs.hide();
                 animating = false;
             },
-            easing: 'easeInOutExpo'
+            //easing: 'easeInOutExpo'
         });
     });
     $(".previous").click(function () {
@@ -138,20 +157,7 @@
                 current_fs.hide();
                 animating = false;
             },
-            easing: 'easeInOutExpo'
+            //easing: 'easeInOutExpo'
         });
-    });
-});
-
-var property = ["Buying a property", "Paying a property rent", "Refurbishing a property"];
-var business = ["Starting a business", "Financing a debt", "Fiout or Refurbishment"];
-$(document).ready(function () {
-    var x = $('input[name="loanType"]:checked').val();
-    console.log(x);
-    $.each(x, function (i,item) {
-        $('#purpose').append($('<option>', {
-            value: item,
-            text: item
-        }));
     });
 });
