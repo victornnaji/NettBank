@@ -136,42 +136,69 @@
 
             <!-- ACQUISITION FIELD SET -->
             <fieldset>
-                <h2 class="fs-title">Acquisition of Donors</h2>
-                <h3 class="fs-subtitle">How have you been doing in acquiring donors?</h3>
-                <!-- Begin Total Number of Donors in Year 1 Field -->
-                <div class="form-item webform-component webform-component-textfield hs_total_number_of_donors_in_year_1 field hs-form-field" id="webform-component-acquisition--amount-1">
+                <div class="fieldset-holder">
+                    <h2 class="fs-title">Let us narrow down your options</h2>
+                    <!-- Begin Total Number of Donors in Year 1 Field -->
+                    @*<div class="form-item webform-component webform-component-textfield hs_total_number_of_donors_in_year_1 field hs-form-field" id="webform-component-acquisition--amount-1">
 
-                    <label for="edit-submitted-acquisition-amount-1 total_number_of_donors_in_year_1-99a6d115-5e68-4355-a7d0-529207feb0b3_6344">What was your number of total donors in year 1? *</label>
+            <label for="edit-submitted-acquisition-amount-1 total_number_of_donors_in_year_1-99a6d115-5e68-4355-a7d0-529207feb0b3_6344">What was your number of total donors in year 1? *</label>
 
-                    <input id="edit-submitted-acquisition-amount-1" class="form-text hs-input" name="total_number_of_donors_in_year_1" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
-                    <span class="error1" style="display: none;">
-                        <i class="error-log fa fa-exclamation-triangle"></i>
-                    </span>
+            <input id="edit-submitted-acquisition-amount-1" class="form-text hs-input" name="total_number_of_donors_in_year_1" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>*@
+                <div class="typeloan mt-4">
+                    <label for="loanType">How long will your loan be for? *</label>
+                    <div class="loan-type flex justify-between item-center w-3/5 mx-auto mt-1 flex-wrap">
+                        <div>
+                            <input type="radio" name="loanType" id="months" value="12" />
+                            <label for="property" class="small-card">
+                                <span class="radio-image h-16 inline-block  text-center"> > 12 Months</span>
+                                <span></span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="loanType" id="property" value="property" />
+                            <label for="property" class="small-card">
+                                <span class="radio-image"><img src="~/Content/Images/house.svg" class="radio-icon" /></span>
+                                <span>Property</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="loanType" id="property" value="property" />
+                            <label for="property" class="small-card">
+                                <span class="radio-image"><img src="~/Content/Images/house.svg" class="radio-icon" /></span>
+                                <span>Property</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="loanType" id="business" value="business" />
+                            <label for="business" class="small-card">
+                                <span class="radio-image"><img src="~/Content/Images/business.svg" class="radio-icon" /></span>
+                                <span>Business</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <!-- End Total Number of Donors in Year 1 Field -->
-                <!-- Begin Total Number of Donors in Year 2 Field -->
-                <div class="form-item webform-component webform-component-textfield hs_total_number_of_donors_in_year_2 field hs-form-field" id="webform-component-acquisition--amount-2">
+                    <!-- End Total Number of Donors in Year 1 Field -->
+                    <!-- Begin Total Number of Donors in Year 2 Field -->
+                    <div class="form-item webform-component webform-component-textfield hs_total_number_of_donors_in_year_2 field hs-form-field" id="webform-component-acquisition--amount-2">
 
-                    <label for="edit-submitted-acquisition-amount-2 total_number_of_donors_in_year_2-99a6d115-5e68-4355-a7d0-529207feb0b3_6344">What was your number of total donors in year 2? *</label>
+                        <label for="edit-submitted-acquisition-amount-2 total_number_of_donors_in_year_2-99a6d115-5e68-4355-a7d0-529207feb0b3_6344">What was your number of total donors in year 2? *</label>
 
-                    <input id="edit-submitted-acquisition-amount-2" class="form-text hs-input" name="total_number_of_donors_in_year_2" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
-                    <span class="error1" style="display: none;">
-                        <i class="error-log fa fa-exclamation-triangle"></i>
-                    </span>
+                        <input id="edit-submitted-acquisition-amount-2" class="form-text hs-input" name="total_number_of_donors_in_year_2" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
+                        <span class="error1" style="display: none;">
+                            <i class="error-log fa fa-exclamation-triangle"></i>
+                        </span>
+                    </div>
                 </div>
-                <!-- End Total Number of Donors in Year 2 Field -->
-                <!-- Begin Calc of Total Number of Donors Fields -->
-                <!-- THIS FIELD IS NOT EDITABLE | GRAYED OUT -->
-                @*<div class="form-item webform-component webform-component-textfield webform-container-inline hs_total_donor_percent_change field hs-form-field">
-
-                    <label for="edit-submitted-acquisition-percent-change total_donor_percent_change-99a6d115-5e68-4355-a7d0-529207feb0b3_6344">Total Donors Percent Change</label>
-
-                    <input id="edit-submitted-acquisition-percent-change" class="form-text hs-input" name="total_donor_percent_change" readonly="readonly" size="60" maxlength="128" type="text" value="" placeholder="0">
-                </div>*@
-                <!-- End Calc of Total Number of Donors Fields -->
-                <input type="button" data-page="2" name="previous" class="previous action-button" value="Previous" />
-                <input type="button" data-page="2" name="next" class="next action-button" value="Next" />
-                @*<div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3">What Is This?</div>*@
+                    <input type="button" data-page="2" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" data-page="2" name="next" class="next action-button" value="Next" />
+                
             </fieldset>
 
 
