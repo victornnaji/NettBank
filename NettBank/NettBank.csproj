@@ -234,6 +234,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Options.cshtml" />
     <Content Include="Views\Shared\_Username.cshtml" />
+    <Content Include="Views\Shared\_Lenders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
