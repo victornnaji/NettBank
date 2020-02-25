@@ -7,12 +7,14 @@ using System.Web;
 
 namespace NettBank.Models
 {
-    public class LoanType
+    public class TypeCompany
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public virtual ICollection<TypeCompany> TypeCompany { get; set; }
+        public int LoanTypeId { get; set; }
+        public LoanType loanType { get; set; }
+
+        public int LoanCompanyId { get; set; }
+        public LoanCompany LoanCompany { get; set; }
     }
 }
