@@ -27,8 +27,7 @@ namespace NettBank.Models
         [Required]
         public string ImagePath { get; set; }
         public string Catch { get; set; }
-        public virtual ICollection<LoanType> LoanType { get; set; }
-        public virtual ICollection<TypeCompany> TypeCompany { get; set; }
+        public virtual ICollection<LoanType> LoanTypes { get; set; }
 
     }
 }
