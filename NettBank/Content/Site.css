@@ -1,1 +1,8 @@
-﻿
+﻿html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.Navigation-bar {
+    font-family: 'Odibee Sans', sans-serif;
+    background: red;
+}
