@@ -10,7 +10,16 @@
     @Styles.Render("~/Content/site.css")
 </head>
 <body>
-    <div class="h-20">
+    <section class="Navigation">
+        <nav class="Navigation-bar h-20">
+            <div class="container">
+                <div class="brand-container">
+                    @Html.ActionLink("NettBank", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+            </div>
+        </nav>
+    </section>
+    @*<div class="h-20">
         <div class="container">
             <div class="navigation flex justify-between items-center h-20">
                 <div class="brand">
@@ -27,7 +36,7 @@
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>
-        </div>
+        </div>*@
         @*<div class="container">
                 <div> hello </div>
                 <div class="navbar-header">
@@ -47,7 +56,6 @@
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>*@
-    </div>
     <div class="containers">
         @RenderBody()
         @*<hr />
