@@ -7,13 +7,13 @@ namespace NettBank.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialMigration3 : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002261408576_InitialMigration3"; }
+            get { return "202002251246424_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

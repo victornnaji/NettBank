@@ -1,20 +1,11 @@
-﻿using NettBank.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace NettBank.Data
 {
-    public class DataContext : DbContext
+    public class DataContext
     {
-        public DataContext() : base("DefaultConnection")
-        {
-
-        }
-
-       
-
     }
 }
