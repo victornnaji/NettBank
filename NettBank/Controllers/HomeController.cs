@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NettBank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,14 @@ namespace NettBank.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<LoanOptions> options = new List<LoanOptions>()
+            {
+                new LoanOptions(){Name = "Business", icon="Business.svg"},
+                new LoanOptions(){Name = "Property", icon="Property.svg"},
+                new LoanOptions(){Name = "Car", icon="Car.svg"},
+                new LoanOptions(){Name = "Student", icon="Student.svg"}
+            };
+            return View(options);
         }
 
         public ActionResult About()

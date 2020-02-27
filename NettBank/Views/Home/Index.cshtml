@@ -1,1 +1,48 @@
-﻿
+﻿@model IEnumerable<NettBank.Models.LoanOptions>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="Hero">
+    <div class="container">
+        <div class="Hero-text-holder pt-10 text-center text-white font-medium">
+            <h1 class="hero-text-heading">Search and Compare Loans with Confidence</h1>
+            <p class="hero-text-sub mb-12">Compare interest rates, fees, features and more from the widest range of financial institutions.</p>
+        </div>
+
+        <div class="hero-card-container flex justify-evenly">
+           @foreach (var item in Model)
+           {
+            <a href="/Loans/@(item.Name)Loan">
+                <div class="hero-card shadow-md">
+                    <div class="hero-icon">
+                        <img src="~/Content/Images/@item.icon" class="hero-icon-image" />
+                    </div>
+                    <div class="hero-card-text mt-4">
+                        @Html.DisplayFor(modelItem => item.Name) Loan
+                    </div>
+                </div>
+            </a>
+           }
+        </div>
+
+        <div class="hero-end">
+            <div class="or">Or</div>
+            <div class="hero-end-text">
+                @Html.ActionLink("let our AI find you a perfect loan", "Index", "Loans")
+                <span class="mx-4"> <img src="~/Content/Images/up-arrow.svg" class="up-arrow" /></span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="Popular-lenders">
+    <div class="container">
+        @Html.Partial("_Lenders")
+    </div>
+</section>
+<section class="top-loans">
+    <div class="container">
+
+    </div>
+</section>
