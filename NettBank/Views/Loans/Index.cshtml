@@ -1,7 +1,10 @@
-﻿
+﻿@model IEnumerable<NettBank.Models.LoanCompany>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>All Loans</h2>
+@foreach(var company in Model)
+{
+    <p>@company.Name</p>
+}
 

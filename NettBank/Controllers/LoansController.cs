@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NettBank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,25 @@ namespace NettBank.Controllers
 {
     public class LoansController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public LoansController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _context.Dispose();
+        }
+
         // GET: Loans
         public ActionResult Index()
         {
-            return View();
+            var loanCompanies = _context.LoanCompanies.OrderBy(x => x.InterestRate).ToList();
+            return View(loanCompanies);
+
         }
 
         public ActionResult BusinessLoan()
