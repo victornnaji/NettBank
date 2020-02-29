@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NettBank.Models.LoanOptions>
+﻿@model NettBank.Models.OptionCompanyViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
         </div>
 
         <div class="hero-card-container flex justify-evenly">
-           @foreach (var item in Model)
+           @foreach (var item in Model.LoanOptions)
            {
             <a href="/Loans/@(item.Name)Loan">
                 <div class="hero-card shadow-md">
@@ -43,6 +43,9 @@
 </section>
 <section class="top-loans">
     <div class="container">
-
+        @foreach (var company in Model.LoanCompanies)
+        {
+            <p>@company.Name</p>
+        }
     </div>
 </section>

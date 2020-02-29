@@ -50,9 +50,6 @@ namespace NettBank.Controllers
             return View();
         }
 
-        public ActionResult PopularLoan()
-        {
-            return View();
-        }
+        
     }
 }

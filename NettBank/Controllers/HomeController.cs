@@ -9,6 +9,18 @@ namespace NettBank.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _context.Dispose();
+        }
+
         public ActionResult Index()
         {
             List<LoanOptions> options = new List<LoanOptions>()
@@ -18,8 +30,21 @@ namespace NettBank.Controllers
                 new LoanOptions(){Name = "Car", icon="Car.svg"},
                 new LoanOptions(){Name = "Student", icon="Student.svg"}
             };
-            return View(options);
+
+            var loanCompanies = _context.LoanCompanies.OrderBy(x => x.InterestRate).Take(4).ToList();
+
+
+            var OptionCompany = new OptionCompanyViewModel
+            {
+                LoanOptions = options,
+                LoanCompanies = loanCompanies
+            };
+
+
+            return View(OptionCompany);
         }
+
+
 
         public ActionResult About()
         {

@@ -199,6 +199,7 @@
     <Compile Include="Models\LoanOptions.cs" />
     <Compile Include="Models\LoanType.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OptionCompanyViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -309,7 +310,6 @@
     <Content Include="Views\Loans\CarLoan.cshtml" />
     <Content Include="Views\Loans\StudentLoan.cshtml" />
     <Content Include="Views\Loans\Index.cshtml" />
-    <Content Include="Views\Shared\PopularLoans.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
