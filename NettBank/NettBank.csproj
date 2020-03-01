@@ -204,8 +204,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\award.svg" />
     <Content Include="Content\Images\Business.svg" />
     <Content Include="Content\Images\Car.svg" />
+    <Content Include="Content\Images\check.svg" />
     <Content Include="Content\Images\clock.svg" />
     <Content Include="Content\Images\Companies\Abeg.svg" />
     <Content Include="Content\Images\Companies\AccessBank.svg" />
