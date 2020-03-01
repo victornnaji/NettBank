@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace NettBank.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private ApplicationDbContext _context;

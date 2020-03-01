@@ -58,11 +58,11 @@ namespace NettBank
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "678166000597-mnod24dq81knc1fh54k6s3oams0e5jnc.apps.googleusercontent.com",
+                ClientSecret = "ru8_pTUgzeCJNrFzCkfCjQTg"
+            });
         }
     }
 }
