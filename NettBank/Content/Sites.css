@@ -289,7 +289,16 @@ html {
 .top-loan-card-image {
     height: 3rem;
 }
-    
+
+.highlight {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-highlight {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+}
 /*STAR RATING*/
 .stars-outer {
     display: inline-block;
