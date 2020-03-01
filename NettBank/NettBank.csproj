@@ -247,10 +247,14 @@
     <Content Include="Content\Images\Companies\VerveLogo.svg" />
     <Content Include="Content\Images\Companies\WalletsAfrica.svg" />
     <Content Include="Content\Images\Companies\WemaBank.svg" />
+    <Content Include="Content\Images\personlised.svg" />
     <Content Include="Content\Images\Property.svg" />
     <Content Include="Content\Images\option.svg" />
+    <Content Include="Content\Images\ratings.png" />
     <Content Include="Content\Images\result.svg" />
+    <Content Include="Content\Images\search.svg" />
     <Content Include="Content\Images\Student.svg" />
+    <Content Include="Content\Images\testimonial.jpg" />
     <Content Include="Content\Sites.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />

@@ -1,7 +1,7 @@
 ﻿@model NettBank.Models.OptionCompanyViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
 }
 
 <section class="Hero">
@@ -41,83 +41,7 @@
         @Html.Partial("_Lenders")
     </div>
 </section>
-<section class="top-loans">
-    <div class="container">
 
-        <h2 class="top-loans-heading mt-24 text-3xl text-gray-900 font-bold uppercase">
-            Best Interest Rate
-            <span><img src="~/Content/Images/award.svg" class="top-loans-icon" /></span>
-        </h2>
-
-        <div class="top-loan-items mt-6">
-            @foreach (var company in Model.LoanCompanies)
-            {
-            <div class="top-loan-card">
-                <div class="top-loan-card-heading text-gray-700">
-                    <div class="rating-holder flex justify-between items-center">
-                        <div class="rating">
-                            @company.Rating
-                        </div>
-                    <div class="rating-text text-right">@company.Rating ratings</div>
-                    </div>
-                    
-                    <p>
-                        @company.Name
-                        @if (company.Catch != null)
-                        {
-                            <span>(@company.Catch)</span>
-                        }
-                    </p>
-
-                </div>
-
-                <div class="top-loan-interest">
-                    <div class="rate">
-                        <div class="top-loan-interest-heading">Interest rate</div>
-                        <div class="interest-rate">
-                            @company.InterestRate%
-                        </div>
-                        <p class="top-loan-interest-heading text-gray-900">Variable</p>
-                    </div>
-                    <div class="commision">
-                        <div class="top-loan-interest-heading">Commision Rate</div>
-                        <div class="interest-rate">
-                            @company.ComparisonRate%
-                        </div>
-                    </div>
-                </div>
-
-                <div class="loan-type-holder mt-6">
-                    @foreach (var loan in company.LoanTypes)
-                    {
-                        <div class="loan-icon-text flex">
-                            <img src="~/Content/Images/check.svg" class="check-icon" />
-                            <div class="loan-type">@loan.Name</div>
-                        </div>
-                    }
-
-                    <div class="loan-icon-text flex">
-                        <img src="~/Content/Images/check.svg" class="check-icon" />
-                        <div class="loan-type">Extra repayments + redraw services</div>
-                    </div>
-                    
-                </div>
-
-                <div class="button-holder flex justify-between mt-8">
-                    <div class="btn more-info">More Info</div>
-                    <div class="btn enquire">Enquire Now</div>
-                </div>
-
-                <div class="top-loan-card-image-holder">
-                    <img src="~/Content/Images/Companies/@company.ImagePath" class="top-loan-card-image"/>
-                </div>
-                
-            </div>
-
-        }
-        </div>
-    </div>
-</section>
 <section class="features mt-20">
     <div class="container">
         <div class="py-12 bg-white">
@@ -209,11 +133,139 @@
     </div>
 </section>
 
-<section class="Hero mt-20">
+<section class="top-loans">
     <div class="container">
-        hey
+
+        <h2 class="top-loans-heading mt-24 text-3xl text-gray-900 font-bold uppercase">
+            Best Interest Rate
+            <span><img src="~/Content/Images/award.svg" class="top-loans-icon" /></span>
+        </h2>
+
+        <div class="top-loan-items mt-6">
+            @foreach (var company in Model.LoanCompanies)
+            {
+                <div class="top-loan-card">
+                    <div class="top-loan-card-heading text-gray-700">
+                        <div class="rating-holder flex justify-between items-center">
+                            <div class="rating">
+                                @company.Rating
+                            </div>
+                            <div class="rating-text text-right">@company.Rating ratings</div>
+                        </div>
+
+                        <p>
+                            @company.Name
+                            @if (company.Catch != null)
+                            {
+                                <span>(@company.Catch)</span>
+                            }
+                        </p>
+
+                    </div>
+
+                    <div class="top-loan-interest">
+                        <div class="rate">
+                            <div class="top-loan-interest-heading">Interest rate</div>
+                            <div class="interest-rate">
+                                @company.InterestRate%
+                            </div>
+                            <p class="top-loan-interest-heading text-gray-900">Variable</p>
+                        </div>
+                        <div class="commision">
+                            <div class="top-loan-interest-heading">Commision Rate</div>
+                            <div class="interest-rate">
+                                @company.ComparisonRate%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="loan-type-holder mt-6">
+                        @foreach (var loan in company.LoanTypes)
+                        {
+                            <div class="loan-icon-text flex">
+                                <img src="~/Content/Images/check.svg" class="check-icon" />
+                                <div class="loan-type">@loan.Name</div>
+                            </div>
+                        }
+
+                        <div class="loan-icon-text flex">
+                            <img src="~/Content/Images/check.svg" class="check-icon" />
+                            <div class="loan-type">Extra repayments + redraw services</div>
+                        </div>
+
+                    </div>
+
+                    <div class="button-holder flex justify-between mt-8">
+                        <div class="btn more-info">More Info</div>
+                        <div class="btn enquire">Enquire Now</div>
+                    </div>
+
+                    <div class="top-loan-card-image-holder">
+                        <img src="~/Content/Images/Companies/@company.ImagePath" class="top-loan-card-image" />
+                    </div>
+
+                </div>
+
+            }
+        </div>
     </div>
 </section>
+
+<section class="testimonial mt-20">
+    <div class="container">
+        <div class="testimonial-heading py-12 highlight">
+            Why search and Compare on NettBank ?
+        </div>
+        <div class="testimonial-body flex">
+            <div class="testimonial-image-holder">
+                <img src="~/Content/Images/testimonial.jpg" class="testimonial-image" />
+            </div>
+
+            <div class="testimonial-cards">
+                <div class="testimonial-card shadow-md">
+                    <div class="testimonial-icon-holder">
+                        <img src="~/Content/Images/ratings.png" class="testimonial-icon" />
+                    </div>
+                    <div class="subheading my-4 text-gray-900">
+                        Real Time Rating™
+                    </div>
+                    <div class="testimonial-card-body">
+                        First and only live home loan rating system, ranking options in real-time from your requirements.
+                    </div>
+                </div>
+                <div class="testimonial-card shadow-md">
+                    <div class="testimonial-icon-holder">
+                        <img src="~/Content/Images/search.svg" class="testimonial-icon" />
+                    </div>
+                    <div class="subheading my-4 text-gray-900">
+                        Smart search
+                    </div>
+                    <div class="testimonial-card-body">
+                        Find your best options with a credit card wizard designed to help and assist.
+                    </div>
+                </div>
+                <div class="testimonial-card shadow-md">
+                    <div class="testimonial-icon-holder">
+                        <img src="~/Content/Images/personlised.svg" class="testimonial-icon" />
+                    </div>
+                    <div class="subheading my-4 text-gray-900">
+                        Personalised rates
+                    </div>
+                    <div class="testimonial-card-body">
+                        Discover your personal loan rates and chances of approval before you apply.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="testimonial-text">
+            "We'll help you make good financial decisions."
+
+            <p class="name">- Sally Tindall</p>
+        </div>
+    </div>
+</section>
+
 
 @section scripts{
    <script type="text/javascript">

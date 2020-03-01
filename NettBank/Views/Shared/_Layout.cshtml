@@ -15,15 +15,21 @@
         <nav class="nav Navigation-bar h-16" role="navigation">
             <div class="container">
                 <div class="Menu flex">
-                    <div class="brand-container">
-                        @Html.ActionLink("NettBank", "Index", "Home", new { area = "Home" }, new { @class = "navbar-brand" })
+                    <div class="brand-container w-1/3 flex items-center">
+                        <img src="~/Content/Images/logo.svg" class="h-10 w-auto brand-logo"/>
+                        <div>@Html.ActionLink("NettBank", "Index", "Home", new { area = "Home" }, new { @class = "navbar-brand" })</div>
                     </div>
                     <div class="menu-items flex w-4/5 capitalize font-medium">
                         <div class="menu-item">@Html.ActionLink("Business Loan", "BusinessLoan", "Loans")</div>
                         <div class="menu-item">@Html.ActionLink("Property Loan", "PropertyLoan", "Loans")</div>
                         <div class="menu-item">@Html.ActionLink("Car Loan", "CarLoan", "Loans")</div>
                         <div class="menu-item">@Html.ActionLink("Student Loan", "StudentLoan", "Loans")</div>
+
+                        <div class="login-signup w-1/3 ">
+                            @Html.Partial("_LoginPartial")
+                        </div>
                     </div>
+                   
                     <div class="mobile-menu">
                         <div class="hamburger-menu"></div>
                     </div>
@@ -33,6 +39,107 @@
     </section>
     <div class="containers">
         @RenderBody()
+
+        <section class="Hero footer mt-32">
+            <div class="container">
+                <div class="footer-section flex justify-between pt-12">
+                    <div class="footer-section-area">
+                        <div class="footer-text-head mb-1 text-gray-400">
+                            Solutions
+                        </div>
+                        <p class="footer-text-links">
+                            Marketing
+                        </p>
+                        <p class="footer-text-links">
+                            Analytics
+                        </p>
+                        <p class="footer-text-links">
+                            Commerce
+                        </p>
+                        <p class="footer-text-links">
+                            Insight
+                        </p>
+                    </div>
+                    <div class="footer-section-area">
+                        <div class="footer-text-head mb-1 text-gray-400">
+                            Support
+                        </div>
+                        <p class="footer-text-links">
+                            Pricing
+                        </p>
+                        <p class="footer-text-links">
+                            Documentation
+                        </p>
+                        <p class="footer-text-links">
+                            Guides
+                        </p>
+                        <p class="footer-text-links">
+                            API status
+                        </p>
+                    </div>
+                    <div class="footer-section-area">
+                        <div class="footer-text-head mb-1 text-gray-400">
+                            Company
+                        </div>
+                        <p class="footer-text-links">
+                            Marketing
+                        </p>
+                        <p class="footer-text-links">
+                            About
+                        </p>
+                        <p class="footer-text-links">
+                            Blog
+                        </p>
+                        <p class="footer-text-links">
+                            Jobs
+                        </p>
+                    </div>
+                    <div class="footer-section-area">
+                        <div class="footer-text-head mb-1 text-gray-400">
+                            Legal
+                        </div>
+                        <p class="footer-text-links">
+                            Claim
+                        </p>
+                        <p class="footer-text-links">
+                            Privacy
+                        </p>
+                        <p class="footer-text-links">
+                            Term
+                        </p>
+                    </div>
+                    <div class="footer-section-area-email">
+                        <div class="footer-text-head mb-1 text-gray-400">
+                            Subscribe to our newletter
+                        </div>
+                        <p class="footer-text-links mb-6">
+                            The latest news, articles and resources sent to your inbox weekly.
+                        </p>
+                        <div class="email-holder">
+                            <form class="w-full max-w-sm">
+                                <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
+                                    <input class="appearance-none bg-transparent border-none w-full text-gray-200 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name">
+                                    <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-200 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                                        Sign Up
+                                    </button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-end mt-12 flex justify-between">
+                    <div class="footer-copyright">&copy;
+                        <script>document.write(new Date().getFullYear());</script>, NettBank. Designed and built by Nnaji Victor</div>
+                    <div class="footer social">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
