@@ -191,6 +191,10 @@
     <Compile Include="Migrations\202002261408576_InitialMigration3.Designer.cs">
       <DependentUpon>202002261408576_InitialMigration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003011432546_nameEmailId.cs" />
+    <Compile Include="Migrations\202003011432546_nameEmailId.Designer.cs">
+      <DependentUpon>202003011432546_nameEmailId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -341,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002261408576_InitialMigration3.resx">
       <DependentUpon>202002261408576_InitialMigration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003011432546_nameEmailId.resx">
+      <DependentUpon>202003011432546_nameEmailId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

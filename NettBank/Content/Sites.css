@@ -396,10 +396,28 @@ html {
         color: rgb(255, 175, 20);
     }
 
-
+.continue-with {
+    display: flex;
+    align-items: center;
+}
+.continue-with::after, .continue-with::before{
+    content: "";
+    height: 1px;
+    display: inline-block;
+    width: 30%;
+    margin: 0 12px; 
+    background: var(--small-text-color);
+}
 /*OVERIDING*/
-.min-h-screen{
+.min-h-screen {
     min-height: 74vh;
+}
+
+.text-danger {
+    color: red;
+    font-size: .8rem;
+    transform: translateY(-6px);
+    display: inline-block;
 }
 /*RESPONSIVENESS*/
 @media (max-width: 1024px) {
