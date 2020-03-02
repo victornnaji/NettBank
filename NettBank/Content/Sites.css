@@ -399,6 +399,7 @@ html {
 .continue-with {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .continue-with::after, .continue-with::before{
     content: "";

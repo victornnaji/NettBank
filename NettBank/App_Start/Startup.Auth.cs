@@ -54,9 +54,9 @@ namespace NettBank
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "2618790668218648",
+               appSecret: "4690e5ff9cb395909332363b95f7ccb6");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
