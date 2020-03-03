@@ -14,17 +14,23 @@
         <div class="hero-card-container flex justify-evenly">
             @foreach (var item in Model.LoanOptions)
             {
-                <a href="/Loans/@(item.Name)Loan">
+                //<a href="/Loans/@(item.Name.Replace(" ", ""))">
+                <a href="javascript:void(0);" class="show" aria-haspopup="true" data-id="@item.Id">
                     <div class="hero-card shadow-md">
                         <div class="hero-icon">
                             <img src="~/Content/Images/@item.icon" class="hero-icon-image" />
                         </div>
                         <div class="hero-card-text mt-4">
-                            @Html.DisplayFor(modelItem => item.Name) Loan
+                            @Html.DisplayFor(modelItem => item.Name)
                         </div>
                     </div>
                 </a>
+
+
             }
+        </div>
+
+        <div class="mask" role="dialog">
         </div>
 
         <div class="hero-end">
@@ -141,6 +147,8 @@
             <span><img src="~/Content/Images/award.svg" class="top-loans-icon" /></span>
         </h2>
 
+        @{ string anonymousString = "*********";}
+
         <div class="top-loan-items mt-6">
             @foreach (var company in Model.LoanCompanies)
             {
@@ -154,7 +162,14 @@
                         </div>
 
                         <p>
-                            @company.Name
+                            @if (!Request.IsAuthenticated)
+                            {
+                                @anonymousString;
+                            }
+                            else
+                            {
+                                @company.Name
+                            }
                             @if (company.Catch != null)
                             {
                                 <span>(@company.Catch)</span>
@@ -201,13 +216,25 @@
                     </div>
 
                     <div class="top-loan-card-image-holder">
-                        <img src="~/Content/Images/Companies/@company.ImagePath" class="top-loan-card-image" />
+                        @if (!Request.IsAuthenticated)
+                        {
+                            @anonymousString
+                        }
+                        else
+                        {
+                            <img src="~/Content/Images/Companies/@company.ImagePath" class="top-loan-card-image" />
+                        }
                     </div>
 
                 </div>
 
             }
+
         </div>
+        @if (!Request.IsAuthenticated)
+        {
+    <p class="text-center mt-4"><span class="text-indigo-600 font-semibold">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" }) </span> to Reveal Loan companies</p>
+        }
     </div>
 </section>
 

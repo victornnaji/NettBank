@@ -13,6 +13,9 @@ namespace NettBank.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        [Required]
+        public string Icon { get; set; }
         public virtual ICollection<LoanCompany> LoanCompanies { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using NettBank.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -24,25 +25,28 @@ namespace NettBank.Controllers
 
         public ActionResult Index()
         {
-            List<LoanOptions> options = new List<LoanOptions>()
-            {
-                new LoanOptions(){Name = "Business", icon="Business.svg"},
-                new LoanOptions(){Name = "Property", icon="Property.svg"},
-                new LoanOptions(){Name = "Car", icon="Car.svg"},
-                new LoanOptions(){Name = "Student", icon="Student.svg"}
-            };
+            var optionFromDatabase = _context.LoanTypes.ToList();
 
+            var optionsDto = new List<LoanOptions>();
+                
+            foreach(var option in optionFromDatabase)
+            {
+                optionsDto.Add(new LoanOptions { Name = option.Name, icon = option.Icon, Id = option.Id });
+            };
+                    
+              
             var loanCompanies = _context.LoanCompanies.OrderBy(x => x.InterestRate).Take(4).ToList();
 
 
             var OptionCompany = new OptionCompanyViewModel
             {
-                LoanOptions = options,
+                LoanOptions = optionsDto,
                 LoanCompanies = loanCompanies
             };
 
 
             return View(OptionCompany);
+            
         }
 
 
@@ -61,9 +65,17 @@ namespace NettBank.Controllers
             return View();
         }
 
-        public ActionResult Options()
-        {
-            return View();
+        public ActionResult LoanForm(int Id)
+        {   
+            var loanType = _context.LoanTypes.SingleOrDefault(c => c.Id == Id);
+
+            var TypeCompany = new LoanTypeLoanCompanyViewModel
+            {
+                LoanType = loanType,
+                LoanFormDto = new LoanFormDto()
+            };
+
+            return PartialView("_LoanForm", TypeCompany);
         }
     }
 }

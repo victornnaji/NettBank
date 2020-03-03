@@ -195,13 +195,19 @@
     <Compile Include="Migrations\202003011432546_nameEmailId.Designer.cs">
       <DependentUpon>202003011432546_nameEmailId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003021450197_UpdateLoantype.cs" />
+    <Compile Include="Migrations\202003021450197_UpdateLoantype.Designer.cs">
+      <DependentUpon>202003021450197_UpdateLoantype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoanCompany.cs" />
+    <Compile Include="Models\LoanFormDto.cs" />
     <Compile Include="Models\LoanOptions.cs" />
     <Compile Include="Models\LoanType.cs" />
+    <Compile Include="Models\LoanTypeLoanCompanyViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OptionCompanyViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -320,6 +326,7 @@
     <Content Include="Views\Loans\CarLoan.cshtml" />
     <Content Include="Views\Loans\StudentLoan.cshtml" />
     <Content Include="Views\Loans\Index.cshtml" />
+    <Content Include="Views\Shared\_LoanForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003011432546_nameEmailId.resx">
       <DependentUpon>202003011432546_nameEmailId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021450197_UpdateLoantype.resx">
+      <DependentUpon>202003021450197_UpdateLoantype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

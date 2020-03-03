@@ -50,6 +50,9 @@ namespace NettBank.Controllers
             return View();
         }
 
-        
+        public ActionResult SearchLoans(LoanTypeLoanCompanyViewModel viewModel)
+        {
+            return View();
+        }
     }
 }
