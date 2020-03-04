@@ -175,29 +175,105 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002261401522_InitialMigration.cs" />
-    <Compile Include="Migrations\202002261401522_InitialMigration.Designer.cs">
-      <DependentUpon>202002261401522_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202003040842221_test.cs" />
+    <Compile Include="Migrations\202003040842221_test.Designer.cs">
+      <DependentUpon>202003040842221_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002261402140_InitialMigration1.cs" />
-    <Compile Include="Migrations\202002261402140_InitialMigration1.Designer.cs">
-      <DependentUpon>202002261402140_InitialMigration1.cs</DependentUpon>
+    <Compile Include="Migrations\202003040930572_ResetTable.cs" />
+    <Compile Include="Migrations\202003040930572_ResetTable.Designer.cs">
+      <DependentUpon>202003040930572_ResetTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002261407576_InitialMigration2.cs" />
-    <Compile Include="Migrations\202002261407576_InitialMigration2.Designer.cs">
-      <DependentUpon>202002261407576_InitialMigration2.cs</DependentUpon>
+    <Compile Include="Migrations\202003040956131_UpdatedTable.cs" />
+    <Compile Include="Migrations\202003040956131_UpdatedTable.Designer.cs">
+      <DependentUpon>202003040956131_UpdatedTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002261408576_InitialMigration3.cs" />
-    <Compile Include="Migrations\202002261408576_InitialMigration3.Designer.cs">
-      <DependentUpon>202002261408576_InitialMigration3.cs</DependentUpon>
+    <Compile Include="Migrations\202003041001335_UpdatedTable1.cs" />
+    <Compile Include="Migrations\202003041001335_UpdatedTable1.Designer.cs">
+      <DependentUpon>202003041001335_UpdatedTable1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003011432546_nameEmailId.cs" />
-    <Compile Include="Migrations\202003011432546_nameEmailId.Designer.cs">
-      <DependentUpon>202003011432546_nameEmailId.cs</DependentUpon>
+    <Compile Include="Migrations\202003041018077_UpdatedTable2.cs" />
+    <Compile Include="Migrations\202003041018077_UpdatedTable2.Designer.cs">
+      <DependentUpon>202003041018077_UpdatedTable2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003021450197_UpdateLoantype.cs" />
-    <Compile Include="Migrations\202003021450197_UpdateLoantype.Designer.cs">
-      <DependentUpon>202003021450197_UpdateLoantype.cs</DependentUpon>
+    <Compile Include="Migrations\202003041018248_UpdatedTable3.cs" />
+    <Compile Include="Migrations\202003041018248_UpdatedTable3.Designer.cs">
+      <DependentUpon>202003041018248_UpdatedTable3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041210067_FoundIssue.cs" />
+    <Compile Include="Migrations\202003041210067_FoundIssue.Designer.cs">
+      <DependentUpon>202003041210067_FoundIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041229363_FoundIssue1.cs" />
+    <Compile Include="Migrations\202003041229363_FoundIssue1.Designer.cs">
+      <DependentUpon>202003041229363_FoundIssue1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041232389_FixedIssue.cs" />
+    <Compile Include="Migrations\202003041232389_FixedIssue.Designer.cs">
+      <DependentUpon>202003041232389_FixedIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041239062_CleanDabase.cs" />
+    <Compile Include="Migrations\202003041239062_CleanDabase.Designer.cs">
+      <DependentUpon>202003041239062_CleanDabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041240335_AddDatabase.cs" />
+    <Compile Include="Migrations\202003041240335_AddDatabase.Designer.cs">
+      <DependentUpon>202003041240335_AddDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041331130_CleanDabase2.cs" />
+    <Compile Include="Migrations\202003041331130_CleanDabase2.Designer.cs">
+      <DependentUpon>202003041331130_CleanDabase2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041331505_AddDatabase2.cs" />
+    <Compile Include="Migrations\202003041331505_AddDatabase2.Designer.cs">
+      <DependentUpon>202003041331505_AddDatabase2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041338565_CleanDabase3.cs" />
+    <Compile Include="Migrations\202003041338565_CleanDabase3.Designer.cs">
+      <DependentUpon>202003041338565_CleanDabase3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041339415_AddDatabase3.cs" />
+    <Compile Include="Migrations\202003041339415_AddDatabase3.Designer.cs">
+      <DependentUpon>202003041339415_AddDatabase3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041357158_AddDatabase31.cs" />
+    <Compile Include="Migrations\202003041357158_AddDatabase31.Designer.cs">
+      <DependentUpon>202003041357158_AddDatabase31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041400187_CleanDabase4.cs" />
+    <Compile Include="Migrations\202003041400187_CleanDabase4.Designer.cs">
+      <DependentUpon>202003041400187_CleanDabase4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041400504_AddDatabase5.cs" />
+    <Compile Include="Migrations\202003041400504_AddDatabase5.Designer.cs">
+      <DependentUpon>202003041400504_AddDatabase5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041405426_AddDatabase6.cs" />
+    <Compile Include="Migrations\202003041405426_AddDatabase6.Designer.cs">
+      <DependentUpon>202003041405426_AddDatabase6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041422506_AddDatabase10.cs" />
+    <Compile Include="Migrations\202003041422506_AddDatabase10.Designer.cs">
+      <DependentUpon>202003041422506_AddDatabase10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041423474_AddDatabase11.cs" />
+    <Compile Include="Migrations\202003041423474_AddDatabase11.Designer.cs">
+      <DependentUpon>202003041423474_AddDatabase11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041503133_AddDatabase12.cs" />
+    <Compile Include="Migrations\202003041503133_AddDatabase12.Designer.cs">
+      <DependentUpon>202003041503133_AddDatabase12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041505139_AddDatabase13.cs" />
+    <Compile Include="Migrations\202003041505139_AddDatabase13.Designer.cs">
+      <DependentUpon>202003041505139_AddDatabase13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041516154_AddDatabase14.cs" />
+    <Compile Include="Migrations\202003041516154_AddDatabase14.Designer.cs">
+      <DependentUpon>202003041516154_AddDatabase14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041535280_AddDatabase15.cs" />
+    <Compile Include="Migrations\202003041535280_AddDatabase15.Designer.cs">
+      <DependentUpon>202003041535280_AddDatabase15.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -327,6 +403,7 @@
     <Content Include="Views\Loans\StudentLoan.cshtml" />
     <Content Include="Views\Loans\Index.cshtml" />
     <Content Include="Views\Shared\_LoanForm.cshtml" />
+    <Content Include="Views\Loans\SearchLoans.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,23 +418,80 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002261401522_InitialMigration.resx">
-      <DependentUpon>202002261401522_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003040842221_test.resx">
+      <DependentUpon>202003040842221_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002261402140_InitialMigration1.resx">
-      <DependentUpon>202002261402140_InitialMigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003040930572_ResetTable.resx">
+      <DependentUpon>202003040930572_ResetTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002261407576_InitialMigration2.resx">
-      <DependentUpon>202002261407576_InitialMigration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003040956131_UpdatedTable.resx">
+      <DependentUpon>202003040956131_UpdatedTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002261408576_InitialMigration3.resx">
-      <DependentUpon>202002261408576_InitialMigration3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003041001335_UpdatedTable1.resx">
+      <DependentUpon>202003041001335_UpdatedTable1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003011432546_nameEmailId.resx">
-      <DependentUpon>202003011432546_nameEmailId.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003041018077_UpdatedTable2.resx">
+      <DependentUpon>202003041018077_UpdatedTable2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003021450197_UpdateLoantype.resx">
-      <DependentUpon>202003021450197_UpdateLoantype.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003041018248_UpdatedTable3.resx">
+      <DependentUpon>202003041018248_UpdatedTable3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041210067_FoundIssue.resx">
+      <DependentUpon>202003041210067_FoundIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041229363_FoundIssue1.resx">
+      <DependentUpon>202003041229363_FoundIssue1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041232389_FixedIssue.resx">
+      <DependentUpon>202003041232389_FixedIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041239062_CleanDabase.resx">
+      <DependentUpon>202003041239062_CleanDabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041240335_AddDatabase.resx">
+      <DependentUpon>202003041240335_AddDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041331130_CleanDabase2.resx">
+      <DependentUpon>202003041331130_CleanDabase2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041331505_AddDatabase2.resx">
+      <DependentUpon>202003041331505_AddDatabase2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041338565_CleanDabase3.resx">
+      <DependentUpon>202003041338565_CleanDabase3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041339415_AddDatabase3.resx">
+      <DependentUpon>202003041339415_AddDatabase3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041357158_AddDatabase31.resx">
+      <DependentUpon>202003041357158_AddDatabase31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041400187_CleanDabase4.resx">
+      <DependentUpon>202003041400187_CleanDabase4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041400504_AddDatabase5.resx">
+      <DependentUpon>202003041400504_AddDatabase5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041405426_AddDatabase6.resx">
+      <DependentUpon>202003041405426_AddDatabase6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041422506_AddDatabase10.resx">
+      <DependentUpon>202003041422506_AddDatabase10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041423474_AddDatabase11.resx">
+      <DependentUpon>202003041423474_AddDatabase11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041503133_AddDatabase12.resx">
+      <DependentUpon>202003041503133_AddDatabase12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041505139_AddDatabase13.resx">
+      <DependentUpon>202003041505139_AddDatabase13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041516154_AddDatabase14.resx">
+      <DependentUpon>202003041516154_AddDatabase14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041535280_AddDatabase15.resx">
+      <DependentUpon>202003041535280_AddDatabase15.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

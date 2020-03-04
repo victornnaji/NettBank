@@ -14,10 +14,10 @@ namespace NettBank.Migrations
 
         protected override void Seed(NettBank.Models.ApplicationDbContext context)
         {
-            var CarLoan = new LoanType{ Name = "Car Loan" };
-            var StudentLoan = new LoanType { Name = "Student Loan" };
-            var PropertyLoan = new LoanType { Name = "Property Loan" };
-            var BusinessLoan = new LoanType { Name = "Business Loan" };
+            var CarLoan = new LoanType{ Name = "Car Loan" , Icon ="Car.svg"};
+            var StudentLoan = new LoanType { Name = "Student Loan", Icon = "Student.svg" };
+            var PropertyLoan = new LoanType { Name = "Property Loan", Icon = "Property.svg" };
+            var BusinessLoan = new LoanType { Name = "Business Loan", Icon = "Business.svg" };
 
             var LoanCompanies = new List<LoanCompany>()
            {

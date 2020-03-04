@@ -11,14 +11,24 @@ namespace NettBank.Models
         {
         }
 
+        
         public DbSet<LoanCompany> LoanCompanies { get; set; }
         public DbSet<LoanType> LoanTypes { get; set; }
-        //public DbSet<LoanTypeTypeCompany> TypeCompanies { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<LoanType>()
+                .HasMany(lt => lt.LoanCompanies)
+                .WithMany(lc => lc.LoanTypes)
+                .Map(m =>
+               {
+                   m.ToTable("LoanTypeLoanCompanies");
+                   m.MapLeftKey("LoanTypeId");
+                   m.MapRightKey("LoanCompanyId");
+               });
 
+            base.OnModelCreating(modelBuilder);
         }
 
 

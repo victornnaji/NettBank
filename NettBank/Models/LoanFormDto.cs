@@ -8,17 +8,19 @@ namespace NettBank.Models
 {
     public class LoanFormDto
     {
+        
+        public int LoanId { get; set; }
         [Display(Name = "How much do you need?")]
         public long? Amount { get; set; }
 
         [Display(Name = "Type of loan?")]
-        public LoanType Loan { get; set; }
+        public string Loan { get; set; }
 
         [Display(Name = "interest rate?")]
         public double? InterestRate { get; set; }
 
         [Display(Name = "Loan Length?")]
-        public int Duration { get; set; }
+        public int? Duration { get; set; }
 
         [Display(Name = "Repayment?")]
         public Frequency RepaymentFrequency { get; set; }

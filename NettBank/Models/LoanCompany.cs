@@ -28,6 +28,7 @@ namespace NettBank.Models
         public string ImagePath { get; set; }
         public string Catch { get; set; }
         public virtual ICollection<LoanType> LoanTypes { get; set; }
+       
 
     }
 }

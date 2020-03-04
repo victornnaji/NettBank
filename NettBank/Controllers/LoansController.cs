@@ -50,9 +50,40 @@ namespace NettBank.Controllers
             return View();
         }
 
-        public ActionResult SearchLoans(LoanTypeLoanCompanyViewModel viewModel)
+        public ActionResult SearchLoans(LoanTypeLoanCompanyViewModel search)
         {
-            return View();
+            var Amount = search.LoanFormDto.Amount;
+            var Interest = search.LoanFormDto.InterestRate;
+            var Duration = search.LoanFormDto.Duration;
+            var freq = search.LoanFormDto.RepaymentFrequency;
+            var LType = search.LoanFormDto.LoanId;
+            var ratings = search.LoanFormDto.Rating;
+            
+            //var result = (from LoanCompany in _context.LoanCompanies 
+            //              where( LoanCompany.MaxAmount >= Amount && LoanCompany.MinAmount <= Amount
+            //              && LoanCompany.InterestRate == Interest && LoanCompany.MaxDuration == Duration
+            //              && LoanCompany.RepaymentFrequency.Equals(freq)
+            //              )
+            //              from LoanType in LoanCompany.LoanTypes
+            //              where (LoanType.Id == LType)
+            //              select new
+            //              {
+            //                  LoanCompany.Name,
+            //                  LoanCompany.Rating,
+            //                  LoanCompany.Catch,
+            //                  LoanCompany.ComparisonRate,
+            //                  LoanCompany.ImagePath,
+            //                  LoanCompany.InterestRate,
+            //                  LoanCompany.MaxAmount,
+            //                  LoanCompany.MaxDuration,
+            //                  LoanCompany.MinAmount,
+            //                  LoanCompany.RepaymentFrequency
+
+            //              }).ToList();
+            var res = _context.LoanCompanies.Where(lc => lc.MaxAmount >= Amount && lc.MinAmount <= Amount
+            && lc.InterestRate >= Interest && lc.MaxDuration >= Duration).ToList();
+
+            return View(res);
         }
     }
 }
