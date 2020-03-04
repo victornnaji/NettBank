@@ -80,10 +80,10 @@ namespace NettBank.Controllers
             //                  LoanCompany.RepaymentFrequency
 
             //              }).ToList();
-            var res = _context.LoanCompanies.Where(lc => lc.MaxAmount >= Amount && lc.MinAmount <= Amount
-            && lc.InterestRate >= Interest && lc.MaxDuration >= Duration).ToList();
+            //var res = _context.LoanCompanies.Where(lc => lc.MaxAmount >= Amount && lc.MinAmount <= Amount
+            //&& lc.InterestRate >= Interest && lc.MaxDuration >= Duration) && _context.LoanTypes.Where( lt => lt.Id == LType)).ToList();
 
-            return View(res);
+            return View();
         }
     }
 }
