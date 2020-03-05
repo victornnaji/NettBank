@@ -59,7 +59,7 @@ namespace NettBank.Controllers
             var LType = search.LoanFormDto.LoanId;
             var ratings = search.LoanFormDto.Rating;
 
-            var result = (from LoanCompany in _context.LoanCompanies
+            var results = (from LoanCompany in _context.LoanCompanies
                           where (LoanCompany.MaxAmount >= Amount && LoanCompany.MinAmount <= Amount
                           && LoanCompany.InterestRate >= Interest && LoanCompany.MaxDuration == Duration
                           )
@@ -67,13 +67,44 @@ namespace NettBank.Controllers
                           where (LoanType.Id == LType)
                           select LoanCompany).ToList();
 
+            var LoanCompanyDto = new List<LoanCompanyViewModel>();
 
+            foreach(var result in results)
+            {
+                LoanCompanyDto.Add(new LoanCompanyViewModel
+                {
+                    Id = result.Id,
+                    Catch = result.Catch,
+                    ComparisonRate = result.ComparisonRate,
+                    ImagePath = result.ImagePath,
+                    InterestRate = result.InterestRate,
+                    LoanTypes = result.LoanTypes,
+                    MaxAmount = result.MaxAmount,
+                    MaxDuration = result.MaxDuration,
+                    MinAmount = result.MinAmount,
+                    Name = result.Name,
+                    Rating = result.Rating,
+                    MonthlyRepayment = GetMonthly((long)Amount, result.InterestRate, (int)Duration),
+                    RepaymentFrequency = result.RepaymentFrequency
+
+                });
+            }
+
+            double GetMonthly(long P, double r, int n )
+            {
+                r = (r / 100) / 12;
+                n = n * 12;
+
+                double A = P * ((r * Math.Pow((1 + r), n)) / (Math.Pow((1 + r), n) - 1));
+
+                return A;
+            }
+
+            ViewBag.duration = Duration;
             ViewBag.loanTitle = search.LoanFormDto.Loan.ToString();
             ViewBag.Money = Amount;
 
-            //var Month = Duration * 12;
-            //ViewBag.MonthlyPayment = 20000*((0.00625 * Math.Pow((1 + 0.00625), 60.0)) / (Math.Pow((1 + 0.00625), 60.0) - 1)); 
-            return View(result);
+            return View(LoanCompanyDto);
         }
     }
 }

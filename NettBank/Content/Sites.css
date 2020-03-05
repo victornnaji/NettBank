@@ -4,6 +4,7 @@
     --grey-white: rgb(251, 251, 252);
     --transition: all .4s ease 0s;
     --border-color: rgb(234, 234, 239);
+    --indigo: #5a67d8;
 }
 html {
     font-size: 62.5%,;
@@ -289,6 +290,12 @@ html {
     border-bottom: 1px solid var(--small-text-color);
 }
 
+.btn-search{
+    width: 6rem;
+    padding: 0;
+    font-size: .6rem;
+}
+
 .top-loan-card-image-holder {
     display: flex;
     justify-content: center;
@@ -485,8 +492,7 @@ html {
 
 /*TABLE*/
 .rwd-table {
-    margin: 1em 0;
-    min-width: 300px;
+    min-width: 100%;
 }
 
     .rwd-table tr {
@@ -513,11 +519,11 @@ html {
         .rwd-table td:before {
             content: attr(data-th) ": ";
             font-weight: bold;
-            width: 6.5em;
+            width: 50%;
             display: inline-block;
         }
 
-@media (min-width: 480px) {
+@media (min-width: 810px) {
     .rwd-table td:before {
         display: none;
     }
@@ -527,21 +533,61 @@ html {
     text-align: left;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 810px) {
     .rwd-table th, .rwd-table td {
         display: table-cell;
         padding: .25em .5em;
     }
 
         .rwd-table th:first-child, .rwd-table td:first-child {
-            padding-left: 0;
+            /*padding-left: 0;*/
         }
 
         .rwd-table th:last-child, .rwd-table td:last-child {
             padding-right: 0;
         }
+
 }
 
+
+.flex-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 810px) {
+    .flex-holder {
+        flex-direction: row;
+    }
+
+    .result-name{
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 810px) {
+    td.company {
+        display: flex;
+        align-items: center
+    }
+
+    td.Link{
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+.rwd-table th, .rwd-table td {
+    margin: .5em 1em;
+}
+
+@media (min-width: 810px) {
+    .rwd-table th, .rwd-table td {
+        padding: 1em !important;
+    }
+}
 /*OVERIDING*/
 .min-h-screen {
     min-height: 74vh;

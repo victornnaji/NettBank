@@ -280,6 +280,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoanCompany.cs" />
+    <Compile Include="Models\LoanCompanyViewModel.cs" />
     <Compile Include="Models\LoanFormDto.cs" />
     <Compile Include="Models\LoanOptions.cs" />
     <Compile Include="Models\LoanType.cs" />

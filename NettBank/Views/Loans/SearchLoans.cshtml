@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NettBank.Models.LoanCompany>
+﻿@model IEnumerable<NettBank.Models.LoanCompanyViewModel>
 @using System.Globalization;
 @{
     ViewBag.Title = "SearchLoans";
@@ -29,13 +29,13 @@
             else
             {
 
-                <h2 class="text-3xl leading-9 font-extrabold text-gray-700">
+                <h2 class="lg:text-3xl text-2xl leading-9 font-extrabold text-gray-700">
                     Compare @(ViewBag.loanTitle + "s") from @ViewBag.Money.ToString("C", CultureInfo.CreateSpecificCulture("ig-NG"))
                 </h2>
 
 
-                <table class="rwd-table mt-3">
-                    <tr>
+                <table class="rwd-table mt-6">
+                    <tr class="lg:h-20 bg-gray-300 p-2 table-head">
                         <th>Company</th>
                         <th>Interest Rate</th>
                         <th>Commison Rate</th>
@@ -47,18 +47,33 @@
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td data-th="Company">@Html.DisplayFor(modelItem => item.Name)</td>
+                        <tr class="h-24">
+                            <td data-th="Company" class="company">
+                                <div class="flex-holder font-semibold">
+                                    <div class="result-name md:mb-2 sm:mr-2 ">@Html.DisplayFor(modelItem => item.Name)</div>
+                                    <img src="~/Content/Images/Companies/@(item.ImagePath.Replace(" ", ""))"  class="h-6"/>
+                                </div>
+                            </td>
                             <td data-th="Interest Rate">@Html.DisplayFor(modelItem => item.InterestRate)%</td>
-                            <td data-th="Commison Rate">@Html.DisplayFor(modelItem => item.ComparisonRate)</td>
-                            <td data-th="Monthly Payment">$460,935,665</td>
+                            <td data-th="Commison Rate">@Html.DisplayFor(modelItem => item.ComparisonRate)%</td>
+                            <td data-th="Monthly Payment" class="company">
+                                <div class="flex-holder">
+                                    <div class="result-name md:mb-2 sm:mr-2 text-lg">@item.MonthlyRepayment.ToString("C", CultureInfo.CreateSpecificCulture("ig-NG"))</div>
+                                    <div class="text-sm text-center">(@(ViewBag.duration * 12) Months)</div>
+                                </div>
+                            </td>
                             <td data-th="Loan Term">@Html.DisplayFor(modelItem => item.MaxDuration) yrs</td>
                             <td data-th="Ratings">
-                                <div class="rating">
+                                <div class="rating inline-block">
                                     @item.Rating
                                 </div>
                             </td>
-                            <td data-th="Link">Go To</td>
+                            <td data-th="Link" class="Link">
+                                <div class="flex-holder">
+                                    <div class="btn more-info btn-search md:mb-2 sm:mr-2">More Info</div>
+                                    <div class="btn enquire btn-search">Enquire Now</div>
+                                </div>
+                            </td>
                         </tr>
                     }
                 </table>
