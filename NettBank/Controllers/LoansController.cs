@@ -32,7 +32,8 @@ namespace NettBank.Controllers
 
         public ActionResult BusinessLoan()
         {
-            return View();
+             
+            return View("SearchLoans", new List<LoanCompanyViewModel>());
         }
 
         public ActionResult PropertyLoan()
@@ -50,6 +51,7 @@ namespace NettBank.Controllers
             return View();
         }
 
+
         public ActionResult SearchLoans(LoanTypeLoanCompanyViewModel search)
         {
             var Amount = search.LoanFormDto.Amount;
@@ -61,14 +63,15 @@ namespace NettBank.Controllers
 
             var results = (from LoanCompany in _context.LoanCompanies
                           where (LoanCompany.MaxAmount >= Amount && LoanCompany.MinAmount <= Amount
-                          && LoanCompany.InterestRate >= Interest && LoanCompany.MaxDuration == Duration
+                          && LoanCompany.InterestRate >= Interest && LoanCompany.MaxDuration >= Duration
                           )
                           from LoanType in LoanCompany.LoanTypes
                           where (LoanType.Id == LType)
-                          select LoanCompany).ToList();
+                          select LoanCompany).OrderBy(x => x.InterestRate).ToList();
 
             var LoanCompanyDto = new List<LoanCompanyViewModel>();
 
+            var loanTypeString = new List<string>();
             foreach(var result in results)
             {
                 LoanCompanyDto.Add(new LoanCompanyViewModel
@@ -78,7 +81,6 @@ namespace NettBank.Controllers
                     ComparisonRate = result.ComparisonRate,
                     ImagePath = result.ImagePath,
                     InterestRate = result.InterestRate,
-                    LoanTypes = result.LoanTypes,
                     MaxAmount = result.MaxAmount,
                     MaxDuration = result.MaxDuration,
                     MinAmount = result.MinAmount,

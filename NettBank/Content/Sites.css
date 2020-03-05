@@ -559,10 +559,17 @@ html {
 @media (max-width: 810px) {
     .flex-holder {
         flex-direction: row;
+        align-items: center;
+        width: 50%;
     }
 
     .result-name{
         margin-right: 1rem;
+    }
+
+    .flex-holder-payment{
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
@@ -587,6 +594,11 @@ html {
     .rwd-table th, .rwd-table td {
         padding: 1em !important;
     }
+}
+
+.loan-form-image{
+    width: 5rem;
+    height: 100%;
 }
 /*OVERIDING*/
 .min-h-screen {
@@ -666,7 +678,7 @@ html {
     }
 
     .Hero{
-        height: 50rem;
+        height: auto;
     }
 
     .hero-text-heading {
@@ -746,7 +758,8 @@ html {
     }
 
     .modal {
-        height: 90vh;
+        height: auto;
+        top: 60%;
     }
 }
 
@@ -754,5 +767,24 @@ html {
     .hero-card {
         width: 11rem;
         height: 8rem;
+    }
+}
+
+@media (max-width: 361px){
+    .modal {
+        height: auto;
+        top: 80%;
+    }
+}
+@media (max-width: 376px) {
+    .hero-card {
+        width: 10rem;
+        height: 8rem;
+    }
+}
+
+@media (max-width: 320px){
+    .hero-card{
+        width: 9rem;
     }
 }

@@ -275,6 +275,10 @@
     <Compile Include="Migrations\202003041535280_AddDatabase15.Designer.cs">
       <DependentUpon>202003041535280_AddDatabase15.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003051403086_Risky1.cs" />
+    <Compile Include="Migrations\202003051403086_Risky1.Designer.cs">
+      <DependentUpon>202003051403086_Risky1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -406,6 +410,7 @@
     <Content Include="Views\Loans\Index.cshtml" />
     <Content Include="Views\Shared\_LoanForm.cshtml" />
     <Content Include="Views\Loans\SearchLoans.cshtml" />
+    <Content Include="Views\Shared\_LoanFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -494,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003041535280_AddDatabase15.resx">
       <DependentUpon>202003041535280_AddDatabase15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003051403086_Risky1.resx">
+      <DependentUpon>202003051403086_Risky1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
