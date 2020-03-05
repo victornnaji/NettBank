@@ -58,32 +58,22 @@ namespace NettBank.Controllers
             var freq = search.LoanFormDto.RepaymentFrequency;
             var LType = search.LoanFormDto.LoanId;
             var ratings = search.LoanFormDto.Rating;
-            
-            //var result = (from LoanCompany in _context.LoanCompanies 
-            //              where( LoanCompany.MaxAmount >= Amount && LoanCompany.MinAmount <= Amount
-            //              && LoanCompany.InterestRate == Interest && LoanCompany.MaxDuration == Duration
-            //              && LoanCompany.RepaymentFrequency.Equals(freq)
-            //              )
-            //              from LoanType in LoanCompany.LoanTypes
-            //              where (LoanType.Id == LType)
-            //              select new
-            //              {
-            //                  LoanCompany.Name,
-            //                  LoanCompany.Rating,
-            //                  LoanCompany.Catch,
-            //                  LoanCompany.ComparisonRate,
-            //                  LoanCompany.ImagePath,
-            //                  LoanCompany.InterestRate,
-            //                  LoanCompany.MaxAmount,
-            //                  LoanCompany.MaxDuration,
-            //                  LoanCompany.MinAmount,
-            //                  LoanCompany.RepaymentFrequency
 
-            //              }).ToList();
-            //var res = _context.LoanCompanies.Where(lc => lc.MaxAmount >= Amount && lc.MinAmount <= Amount
-            //&& lc.InterestRate >= Interest && lc.MaxDuration >= Duration) && _context.LoanTypes.Where( lt => lt.Id == LType)).ToList();
+            var result = (from LoanCompany in _context.LoanCompanies
+                          where (LoanCompany.MaxAmount >= Amount && LoanCompany.MinAmount <= Amount
+                          && LoanCompany.InterestRate >= Interest && LoanCompany.MaxDuration == Duration
+                          )
+                          from LoanType in LoanCompany.LoanTypes
+                          where (LoanType.Id == LType)
+                          select LoanCompany).ToList();
 
-            return View();
+
+            ViewBag.loanTitle = search.LoanFormDto.Loan.ToString();
+            ViewBag.Money = Amount;
+
+            //var Month = Duration * 12;
+            //ViewBag.MonthlyPayment = 20000*((0.00625 * Math.Pow((1 + 0.00625), 60.0)) / (Math.Pow((1 + 0.00625), 60.0) - 1)); 
+            return View(result);
         }
     }
 }

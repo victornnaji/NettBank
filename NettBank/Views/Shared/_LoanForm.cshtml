@@ -36,7 +36,7 @@
                               @class = "appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                               placeholder = Model.LoanType.Name.ToString(),
                               @readonly ="readonly",
-                              //Value = Model.LoanType.Name
+                              Value = Model.LoanType.Name
                            })
                         @Html.HiddenFor( m => m.LoanFormDto.LoanId, new { Value = Model.LoanType.Id })
                     </div>

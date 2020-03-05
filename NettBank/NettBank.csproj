@@ -333,6 +333,7 @@
     <Content Include="Content\Images\Companies\VerveLogo.svg" />
     <Content Include="Content\Images\Companies\WalletsAfrica.svg" />
     <Content Include="Content\Images\Companies\WemaBank.svg" />
+    <Content Include="Content\Images\no_result.svg" />
     <Content Include="Content\Images\personlised.svg" />
     <Content Include="Content\Images\Property.svg" />
     <Content Include="Content\Images\option.svg" />
