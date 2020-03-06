@@ -57,7 +57,9 @@ else
                 </td>
                 <td data-th="Link" class="Link">
                     <div class="flex-holder">
-                        <div class="btn more-info btn-search md:mb-2 sm:mr-2">More Info</div>
+                        <div class="btn more-info btn-search md:mb-2 sm:mr-2">
+                            @Html.ActionLink("More Info", "LoanDetail", "Loans", new { Id = item.Id } , htmlAttributes: new { id = "MoreLink" })
+                        </div>
                         <div class="btn enquire btn-search">Enquire Now</div>
                     </div>
                 </td>

@@ -37,5 +37,6 @@ namespace NettBank.Models
             return new ApplicationDbContext();
         }
 
+       
     }
 }

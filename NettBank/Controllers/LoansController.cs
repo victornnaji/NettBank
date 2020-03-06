@@ -61,6 +61,11 @@ namespace NettBank.Controllers
             var LType = search.LoanFormDto.LoanId;
             var ratings = search.LoanFormDto.Rating;
 
+            Session["searchAmount"] = search.LoanFormDto.Amount;
+            Session["searchDuration"] = search.LoanFormDto.Duration;
+
+
+
             var results = (from LoanCompany in _context.LoanCompanies
                           where (LoanCompany.MaxAmount >= Amount && LoanCompany.MinAmount <= Amount
                           && LoanCompany.InterestRate >= Interest && LoanCompany.MaxDuration >= Duration
@@ -97,16 +102,6 @@ namespace NettBank.Controllers
                 });
             }
 
-            double GetMonthly(long P, double r, int n )
-            {
-                r = (r / 100) / 12;
-                n = n * 12;
-
-                double A = P * ((r * Math.Pow((1 + r), n)) / (Math.Pow((1 + r), n) - 1));
-
-                return A;
-            }
-
             ViewBag.duration = Duration;
             ViewBag.loanTitle = search.LoanFormDto.Loan;
             ViewBag.Money = Amount;
@@ -114,5 +109,44 @@ namespace NettBank.Controllers
 
             return View(LoanCompanyDto);
         }
+
+        double GetMonthly(long P, double r, int n)
+        {
+            r = (r / 100) / 12;
+            n = n * 12;
+
+            double A = P * ((r * Math.Pow((1 + r), n)) / (Math.Pow((1 + r), n) - 1));
+
+            return A;
+        }
+
+        [Authorize]
+        public ActionResult LoanDetail(int Id)
+        {
+            var Amount = Session["searchAmount"];
+            var Duration = Session["SearchDuration"];
+             
+
+            var result = _context.LoanCompanies.Where(x => x.Id == Id).SingleOrDefault();
+
+            var companyDto = new LoanCompanyViewModel()
+            {
+                Id = result.Id,
+                Catch = result.Catch,
+                ComparisonRate = result.ComparisonRate,
+                ImagePath = result.ImagePath,
+                InterestRate = result.InterestRate,
+                MaxAmount = result.MaxAmount,
+                MaxDuration = result.MaxDuration,
+                MinAmount = result.MinAmount,
+                Name = result.Name,
+                Rating = result.Rating,
+                MonthlyRepayment = GetMonthly((long)Amount, result.InterestRate, (int)Duration),
+                RepaymentFrequency = result.RepaymentFrequency
+            };
+
+            return View(companyDto);
+        }
+
     }
 }
