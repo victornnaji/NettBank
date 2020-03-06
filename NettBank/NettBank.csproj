@@ -282,6 +282,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\FormCompanyViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoanCompany.cs" />
     <Compile Include="Models\LoanCompanyViewModel.cs" />
@@ -330,7 +331,7 @@
     <Content Include="Content\Images\Companies\Quickteller.svg" />
     <Content Include="Content\Images\Companies\RenMoney.svg" />
     <Content Include="Content\Images\Companies\Schoolable.svg" />
-    <Content Include="Content\Images\Companies\StandardChartered.svg" />
+    <Content Include="Content\Images\Companies\StandardCharterd.svg" />
     <Content Include="Content\Images\Companies\SterlingBank.svg" />
     <Content Include="Content\Images\Companies\ThankUCash.svg" />
     <Content Include="Content\Images\Companies\VenturesPlatform.svg" />
@@ -338,6 +339,8 @@
     <Content Include="Content\Images\Companies\VerveLogo.svg" />
     <Content Include="Content\Images\Companies\WalletsAfrica.svg" />
     <Content Include="Content\Images\Companies\WemaBank.svg" />
+    <Content Include="Content\Images\experts.svg" />
+    <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\no_result.svg" />
     <Content Include="Content\Images\personlised.svg" />
     <Content Include="Content\Images\Property.svg" />
@@ -347,6 +350,7 @@
     <Content Include="Content\Images\search.svg" />
     <Content Include="Content\Images\Student.svg" />
     <Content Include="Content\Images\testimonial.jpg" />
+    <Content Include="Content\Images\up-arrow.svg" />
     <Content Include="Content\Sites.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />

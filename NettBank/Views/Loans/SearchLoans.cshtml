@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NettBank.Models.LoanCompanyViewModel>
+﻿@model NettBank.Models.FormCompanyViewModel
 @using System.Globalization;
 @{
     ViewBag.Title = "SearchLoans";
@@ -6,12 +6,106 @@
 
 <section class="Search-result">
     <div class="container">
-        <div class="form-refine-holder mt-6">
-            hello!!!!
+        <div class="form-refine-holder mt-1">
+
+            <div class="form-refine-content refine-form-head mt-4 mb-2 lg:mb-4">
+                <div class="form-refine-header-item">
+                    <div class="refine-image-holder">
+                        <img src="~/Content/Images/experts.svg" class="refine-image" />
+                    </div>
+                    <div class="form-refine-header-text-holder">
+                        <div class="form-refine-heading">
+                            Contact a broker
+                        </div>
+                        <p class="text-sm">We are there to help you out with all your queries</p>
+                    </div>
+                    <div class="refine-button">
+                        <div class="btn enquire btn-search">Talk to a broker</div>
+                    </div>
+                </div>
+                <div class="form-refine-header-item">
+                    <div class="refine-image-holder">
+                        <img src="~/Content/Images/personlised.svg" class="refine-image" />
+                    </div>
+                    <div class="form-refine-header-text-holder">
+                        <div class="form-refine-heading">
+                            Get a personalised rate
+                        </div>
+                        <p class=" text-sm mr-1">Make sure you're getting the best rate on your @ViewBag.loanTitle</p>
+                    </div>
+                    <div class="refine-button">
+                        <div class="btn enquire btn-search">Get your rates now</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-refine-header lg:ml-6 ml-0 sm:text-center lg:text-left text-left mb-12 text-sm lg:w-1/2 w-full">
+                Compare some of the best  @(ViewBag.loanTitle + "s") from a wide range of Nigerian lenders. Compare interest rates, repayments, fees and more.- Last updated on @DateTime.Now.ToString().
+            </div>
+
+            @using (Html.BeginForm("SearchLoans", "Loans", FormMethod.Post, new { @class = "w-full", role = "form" }))
+            {
+
+                <div class="form-refine-content border-t-2 border-gray-100">
+                    @*AMOUNT INPUT*@
+                    <div class="form-refine-item">
+                        @Html.LabelFor(m => m.LoanFormDto.Amount, new { @class = "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" })
+
+                        <div class="flex">
+                            <input class="appearance-none block w-2/12 bg-indigo-700  h-16 border-r-0 text-center text-gray-200 border border-indigo-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-indigo-500" disabled placeholder="₦">
+                            @Html.TextBoxFor(m => m.LoanFormDto.Amount, new
+                            {
+                                @class = "appearance-none block w-10/12 bg-gray-200 rounded-l-none border-l-0 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500",
+                                placeholder = "100000"
+                            })
+                        </div>
+
+                    </div>
+                    @* Duration *@
+                    <div class="form-refine-item">
+                        @Html.LabelFor(m => m.LoanFormDto.Duration, new { @class = "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" })
+
+                        <div class="flex">
+                            @Html.TextBoxFor(m => m.LoanFormDto.Duration, new
+                             {
+                                 @class = "appearance-none block w-4/6 sm:w-4/6 h-16 bg-gray-200 rounded-r-none border-r-0 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                                 placeholder = 5,
+                              })
+                            <input class="appearance-none block w-2/6 sm:w-2/6 bg-indigo-600 rounded-l-none border-l-0 text-center text-white border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-500" disabled placeholder="yrs">
+                        </div>
+
+                        @Html.HiddenFor(m => m.LoanFormDto.LoanId, new { Value = ViewBag.Id })
+                    </div>
+
+                    <div class="form-refine-item">
+                        @Html.LabelFor(m => m.LoanFormDto.InterestRate, new { @class = "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" })
+
+                        @Html.TextBoxFor(m => m.LoanFormDto.InterestRate, new
+                            {
+                                @class = "appearance-none block w-full bg-gray-200  h-16 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500",
+                                placeholder = "100000"
+                            })
+                        @Html.HiddenFor(m => m.LoanFormDto.Loan, new { Value = ViewBag.loanTitle.ToString() })
+                    </div>
+
+                    <div class="form-refine-item">
+                        <button type="submit" class="group relative w-full flex h-16 justify-center mt-2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-gray active:bg-indigo-700">
+                            Get Result
+                        </button>
+                    </div>
+
+                </div>
+
+
+            }
         </div>
 
+        @{ 
+            var data = Model.LoanCompanyViewModels.ToList();
+        }
+
         <div class="loan-result-holder mt-10">
-           @Html.Partial("_LoanFormPartial", Model)
+           @Html.Partial("_LoanFormPartial", data.ToList())
         </div>
     </div>
 </section>

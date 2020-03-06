@@ -475,12 +475,64 @@ html {
     background: var(--small-text-color);
 }
 
-.form-refine-holder{
-    height: 18rem;
-    background: red;
+.form-refine-holder {
+    height: auto;
+    background: inherit;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
 }
 
-.empty-result{
+.form-refine-heading {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    max-width: 100%;
+    font-weight: 900;
+}
+
+
+.form-refine-header-item {
+    background: #fff;
+    box-shadow: 0 2rem 6rem transparent;
+    border: .5px solid var(--border-color);
+    width: 50%;
+    margin: 0 1rem;
+    padding: 6px 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: normal;
+    align-items: center;
+    min-height: 5rem;
+    flex: 1 auto 1;
+}
+
+.form-refine-header-text-holder {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex: 5 1 0%;
+}
+
+@media (max-width: 810px) {
+    .form-refine-header-item {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.refine-image {
+    height: 50px;
+    margin-right: 10px;
+}
+.empty-result {
     height: 20rem;
 }
 
@@ -489,7 +541,28 @@ html {
     width: 15rem;
 }
 
+.form-refine-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+
+
+.form-refine-item{
+    margin: 0 1rem;
+}
+
+@media (max-width: 810px){
+    .form-refine-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-refine-item {
+        margin: 1rem 0rem;
+    }
+}
 /*TABLE*/
 .rwd-table {
     min-width: 100%;
@@ -530,13 +603,14 @@ html {
 }
 
 .rwd-table th, .rwd-table td {
-    text-align: left;
+    text-align: center;
 }
 
 @media (min-width: 810px) {
     .rwd-table th, .rwd-table td {
         display: table-cell;
         padding: .25em .5em;
+
     }
 
         .rwd-table th:first-child, .rwd-table td:first-child {
@@ -553,7 +627,7 @@ html {
 .flex-holder {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 @media (max-width: 810px) {
@@ -570,6 +644,9 @@ html {
     .flex-holder-payment{
         flex-direction: column;
         align-items: flex-start;
+    }
+    .rwd-table th, .rwd-table td {
+        text-align: left;
     }
 }
 

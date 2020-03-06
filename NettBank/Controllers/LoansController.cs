@@ -69,12 +69,17 @@ namespace NettBank.Controllers
                           where (LoanType.Id == LType)
                           select LoanCompany).OrderBy(x => x.InterestRate).ToList();
 
-            var LoanCompanyDto = new List<LoanCompanyViewModel>();
+            //var LoanCompanyDto = new List<LoanCompanyViewModel>();
+
+            var LoanCompanyDto = new FormCompanyViewModel();
+
+            LoanCompanyDto.LoanCompanyViewModels = new List<LoanCompanyViewModel>();
 
             var loanTypeString = new List<string>();
             foreach(var result in results)
             {
-                LoanCompanyDto.Add(new LoanCompanyViewModel
+               
+                LoanCompanyDto.LoanCompanyViewModels.Add(new LoanCompanyViewModel
                 {
                     Id = result.Id,
                     Catch = result.Catch,
@@ -103,8 +108,9 @@ namespace NettBank.Controllers
             }
 
             ViewBag.duration = Duration;
-            ViewBag.loanTitle = search.LoanFormDto.Loan.ToString();
+            ViewBag.loanTitle = search.LoanFormDto.Loan;
             ViewBag.Money = Amount;
+            ViewBag.Id = LType;
 
             return View(LoanCompanyDto);
         }
