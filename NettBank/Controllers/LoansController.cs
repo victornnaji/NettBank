@@ -63,6 +63,7 @@ namespace NettBank.Controllers
 
             Session["searchAmount"] = search.LoanFormDto.Amount;
             Session["searchDuration"] = search.LoanFormDto.Duration;
+            Session["loantype"] = search.LoanFormDto.Loan;
 
 
 
@@ -115,9 +116,7 @@ namespace NettBank.Controllers
             r = (r / 100) / 12;
             n = n * 12;
 
-            double A = P * ((r * Math.Pow((1 + r), n)) / (Math.Pow((1 + r), n) - 1));
-
-            return A;
+            return P * ((r * Math.Pow((1 + r), n)) / (Math.Pow((1 + r), n) - 1));
         }
 
         [Authorize]
@@ -125,7 +124,9 @@ namespace NettBank.Controllers
         {
             var Amount = Session["searchAmount"];
             var Duration = Session["SearchDuration"];
-             
+            var loanType = Session["loantype"];
+
+
 
             var result = _context.LoanCompanies.Where(x => x.Id == Id).SingleOrDefault();
 
@@ -144,6 +145,11 @@ namespace NettBank.Controllers
                 MonthlyRepayment = GetMonthly((long)Amount, result.InterestRate, (int)Duration),
                 RepaymentFrequency = result.RepaymentFrequency
             };
+
+            ViewBag.Amount = Amount;
+            ViewBag.Duration = Duration;
+            ViewBag.loanType = loanType;
+
 
             return View(companyDto);
         }
