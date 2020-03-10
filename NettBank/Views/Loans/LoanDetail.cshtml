@@ -136,6 +136,41 @@
         </div>
     </div>
 </section>
+<section class="amortization-table -mt-6">
+    <div class="container">
+        <h2 class="text-center text-gray-700 font-bold text-3xl">Payment Plans</h2>
+        <table class="rwd-table mt-6">
+            <tr class="lg:h-20 bg-gray-300 p-2 table-head">
+                <th>Month</th>
+                <th>Payment Made</th>
+                <th>Principal Paid</th>
+                <th>Interest Paid</th>
+                <th>Remaining Balance</th>
+            </tr>
+
+            @{ 
+                var count = 0;
+            }
+            @foreach (var item in Model.RepaymentDetails)
+            {
+                
+                count++;
+                <tr class="h-24">
+                    <td data-th="Month">@count</td>
+                    <td data-th="Payment Made">@item.Payment.ToString("C", CultureInfo.CreateSpecificCulture("ig-NG"))</td>
+                    <td data-th="Principal Paid">
+                        @item.Principal.ToString("C", CultureInfo.CreateSpecificCulture("ig-NG"))
+                    </td>
+                    <td data-th="Interest Paid">@item.Interest.ToString("C", CultureInfo.CreateSpecificCulture("ig-NG"))</td>
+                    <td data-th="Remaining Balance">
+                        @item.Balance.ToString("C", CultureInfo.CreateSpecificCulture("ig-NG"))
+                    </td>
+                </tr>
+              
+            }
+        </table>
+    </div>
+</section>
 
 @section scripts{
     <script type="text/javascript">

@@ -119,6 +119,11 @@ namespace NettBank.Controllers
             return P * ((r * Math.Pow((1 + r), n)) / (Math.Pow((1 + r), n) - 1));
         }
 
+        double GetTotalAmount(double M, int n)
+        {
+            return M * n;
+        }
+
         [Authorize]
         public ActionResult LoanDetail(int Id)
         {
@@ -126,9 +131,63 @@ namespace NettBank.Controllers
             var Duration = Session["SearchDuration"];
             var loanType = Session["loantype"];
 
+            var stringAmount = Session["searchAmount"].ToString();
 
+            double Amounts = double.Parse(stringAmount);
+            int Durations = (int)Duration;
 
             var result = _context.LoanCompanies.Where(x => x.Id == Id).SingleOrDefault();
+
+            var monthlyAmount = GetMonthly((long)Amounts, result.InterestRate, (int)Duration);
+
+            var duration = int.Parse(Duration.ToString()) * 12;
+
+            var totalAmount = GetTotalAmount(monthlyAmount, duration);
+
+            var yearlyAmount = monthlyAmount * 12;
+
+            var repayments = new List<RepaymentDetails>();
+
+
+
+            int count = 1;
+            double new_balance, interest_paid, principal_paid;
+
+            while(Amounts > 0.00)
+            {
+                new_balance = Amounts;
+
+                interest_paid = new_balance * ((result.InterestRate / 100) / 12);
+                principal_paid = monthlyAmount - interest_paid;
+                Amounts = new_balance - principal_paid;
+
+
+                if ((new_balance + interest_paid) <= monthlyAmount && count == 12 * (int)Duration)
+                {
+                    repayments.Add(new RepaymentDetails
+                    {
+                        Payment = new_balance + interest_paid,
+                        Interest = interest_paid,
+                        Principal = new_balance - interest_paid,
+                        Balance = 0.00
+                    }); ;
+                }
+                else
+                {
+                    repayments.Add(new RepaymentDetails
+                    {
+                        Payment = monthlyAmount,
+                        Interest = interest_paid,
+                        Principal = principal_paid,
+                        Balance = Amounts
+                    });
+                }
+
+                count++;
+                
+
+
+            }
 
             var companyDto = new LoanCompanyViewModel()
             {
@@ -142,8 +201,9 @@ namespace NettBank.Controllers
                 MinAmount = result.MinAmount,
                 Name = result.Name,
                 Rating = result.Rating,
-                MonthlyRepayment = GetMonthly((long)Amount, result.InterestRate, (int)Duration),
-                RepaymentFrequency = result.RepaymentFrequency
+                MonthlyRepayment = monthlyAmount,
+                RepaymentFrequency = result.RepaymentFrequency,
+                RepaymentDetails = repayments,
             };
 
             ViewBag.Amount = Amount;

@@ -20,6 +20,6 @@ namespace NettBank.Models
         public string ImagePath { get; set; }
         public string Catch { get; set; }
         public double MonthlyRepayment { get; set; }
-        //public ICollection<LoanType> LoanTypes { get; set; }
+        public List<RepaymentDetails> RepaymentDetails { get; set; }
     }
 }
